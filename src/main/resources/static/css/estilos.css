@@ -15,3 +15,15 @@
 p{
     color:orange;
 }
+
+a:hover{
+    color:white;
+    background-color: black;
+    font-size: 25px;
+    transition: 0.9s;
+}
+
+a:active{
+color: crimson;
+background-color:cadetblue;
+}
