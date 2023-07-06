@@ -30,8 +30,8 @@ public class ProductoController {
     @GetMapping("/listado")
     public String inicio(Model model) {
         log.info("Consumiendo el recurso /producto/listado");
-        List <Producto> productos= productoService.getProductos(false);
-        List <Categoria> categorias= categoriaService.getCategorias(true);
+        List<Producto> productos= productoService.getProductos(false);
+        List<Categoria> categorias= categoriaService.getCategorias(true);
         model.addAttribute("productos", productos);
         model.addAttribute("categorias", categorias);
         model.addAttribute("totalProductos", productos.size());
@@ -69,8 +69,9 @@ public class ProductoController {
     @GetMapping("/modificar/{idProducto}")
     public String productoModificar(Producto producto, Model model) {
         producto = productoService.getProducto(producto);
+        List<Categoria> categorias= categoriaService.getCategorias(true);
         model.addAttribute("producto", producto);
-         model.addAttribute("categoria", producto);
+        model.addAttribute("categorias", categorias);
         return "/producto/modifica";
     }
     
