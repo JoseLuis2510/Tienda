@@ -26,6 +26,7 @@ public class CategoriaController {
     public String inicio(Model model) {
         log.info("Consumiendo el recurso /categoria/listado");
         List <Categoria> categorias= categoriaService.getCategorias(false);
+       //List <Categoria> categorias= categoriaService.getPorDescripcion("Monitores");
         model.addAttribute("categorias", categorias);
         model.addAttribute("totalCategorias", categorias.size());
         return "/categoria/listado";
